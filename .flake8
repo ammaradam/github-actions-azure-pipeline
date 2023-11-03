@@ -1,0 +1,13 @@
+[flake8]
+ignore =
+    W504,
+    C901,
+    E41
+max-line-length = 79
+exclude =
+    .git,
+    .cache,
+per-file-ignores =
+    code/__init__.py:D104
+max-complexity = 10
+import-order-style = pep8
