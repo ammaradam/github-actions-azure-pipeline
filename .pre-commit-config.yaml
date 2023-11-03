@@ -1,15 +1,24 @@
+---
+default_language_version:
+  python: python3.10
+
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
     hooks:
-    -   id: check-yaml
-    -   id: end-of-file-fixer
-    -   id: trailing-whitespace
-# -   repo: https://github.com/psf/black
-#     rev: 22.10.0
-#     hooks:
-#     -   id: black
--   repo: https://github.com/pycqa/flake8
-    rev: '6.1.0'  # pick a git hash / tag to point to
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: no-commit-to-branch
+        args: [--branch, main]
+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
     hooks:
-    -   id: flake8
+      - id: black
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 3.7.9
+    hooks:
+      - id: flake8
